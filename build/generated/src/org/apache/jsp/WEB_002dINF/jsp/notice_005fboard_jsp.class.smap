@@ -1,0 +1,26 @@
+SMAP
+notice_005fboard_jsp.java
+JSP
+*S JSP
+*F
++ 0 notice_board.jsp
+WEB-INF/jsp/notice_board.jsp
++ 1 taglib_includes.jsp
+WEB-INF/jsp/taglib_includes.jsp
+*L
+1,2:59
+1#1,7:61
+3#0,95:68
+98:163,2
+99,153:165
+251:456,11
+252,2:467
+254,3:469,3
+257,3:478
+259,22:320
+280:505,11
+281,2:516
+283,2:518,3
+285,3:524
+287,95:344
+*E

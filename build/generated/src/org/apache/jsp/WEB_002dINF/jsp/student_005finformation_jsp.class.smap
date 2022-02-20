@@ -1,0 +1,30 @@
+SMAP
+student_005finformation_jsp.java
+JSP
+*S JSP
+*F
++ 0 student_information.jsp
+WEB-INF/jsp/student_information.jsp
++ 1 taglib_includes.jsp
+WEB-INF/jsp/taglib_includes.jsp
+*L
+1:62
+1#1,7:63
+2#0,121:70
+122:400,8
+122,4:193
+126:197,3
+127,59:200
+185:427,11
+186:438
+187,4:439,3
+191,4:451
+195:455,3
+196,4:458
+199,25:261
+223:486,11
+224,2:497
+226,2:499,3
+228,3:505
+230,95:288
+*E

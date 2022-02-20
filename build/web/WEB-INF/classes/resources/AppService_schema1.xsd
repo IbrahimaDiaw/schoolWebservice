@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://service.idb.com/" xmlns:tns="http://service.idb.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="addEvaluations" nillable="true" type="tns:addEvaluations"/>
+
+  <xs:element name="addEvaluationsResponse" nillable="true" type="tns:addEvaluationsResponse"/>
+
+  <xs:element name="checkUser" nillable="true" type="tns:checkUser"/>
+
+  <xs:element name="checkUserResponse" nillable="true" type="tns:checkUserResponse"/>
+
+  <xs:element name="getAllClasses" nillable="true" type="tns:getAllClasses"/>
+
+  <xs:element name="getAllClassesResponse" nillable="true" type="tns:getAllClassesResponse"/>
+
+  <xs:element name="getAllEvaluations" nillable="true" type="tns:getAllEvaluations"/>
+
+  <xs:element name="getAllEvaluationsResponse" nillable="true" type="tns:getAllEvaluationsResponse"/>
+
+  <xs:element name="getAllMatieres" nillable="true" type="tns:getAllMatieres"/>
+
+  <xs:element name="getAllMatieresResponse" nillable="true" type="tns:getAllMatieresResponse"/>
+
+  <xs:element name="getAllStudents" nillable="true" type="tns:getAllStudents"/>
+
+  <xs:element name="getAllStudentsResponse" nillable="true" type="tns:getAllStudentsResponse"/>
+
+  <xs:element name="getAllUsers" nillable="true" type="tns:getAllUsers"/>
+
+  <xs:element name="getAllUsersResponse" nillable="true" type="tns:getAllUsersResponse"/>
+
+  <xs:element name="getEtudiantByID" nillable="true" type="tns:getEtudiantByID"/>
+
+  <xs:element name="getEtudiantByIDResponse" nillable="true" type="tns:getEtudiantByIDResponse"/>
+
+  <xs:element name="getEvaluationsByID" nillable="true" type="tns:getEvaluationsByID"/>
+
+  <xs:element name="getEvaluationsByIDResponse" nillable="true" type="tns:getEvaluationsByIDResponse"/>
+
+  <xs:element name="getMatieresByID" nillable="true" type="tns:getMatieresByID"/>
+
+  <xs:element name="getMatieresByIDResponse" nillable="true" type="tns:getMatieresByIDResponse"/>
+
+  <xs:element name="getSemestre" nillable="true" type="tns:getSemestre"/>
+
+  <xs:element name="getSemestreResponse" nillable="true" type="tns:getSemestreResponse"/>
+
+  <xs:complexType name="addEvaluations">
+    <xs:sequence>
+      <xs:element name="arg0" type="tns:evaluations" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="evaluations">
+    <xs:sequence>
+      <xs:element name="codeEtudiant" type="tns:etudiants" minOccurs="0"/>
+      <xs:element name="codeMatiere" type="tns:matieres" minOccurs="0"/>
+      <xs:element name="dateEvaluation" type="tns:date" minOccurs="0"/>
+      <xs:element name="note" type="xs:double"/>
+      <xs:element name="type" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="etudiants">
+    <xs:sequence>
+      <xs:element name="codeClasse" type="xs:string" minOccurs="0"/>
+      <xs:element name="codeEtudiant" type="xs:string" minOccurs="0"/>
+      <xs:element name="dateNaissance" type="tns:date" minOccurs="0"/>
+      <xs:element name="nom" type="xs:string" minOccurs="0"/>
+      <xs:element name="prenom" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="date">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="matieres">
+    <xs:sequence>
+      <xs:element name="codeMatiere" type="xs:string" minOccurs="0"/>
+      <xs:element name="description" type="xs:string" minOccurs="0"/>
+      <xs:element name="libelle" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="addEvaluationsResponse">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getMatieresByID">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getMatieresByIDResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:matieres" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getEvaluationsByID">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getEvaluationsByIDResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:evaluations" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getSemestre">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+      <xs:element name="arg1" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getSemestreResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:evaluations" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getAllClasses">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getAllClassesResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:classes" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="classes">
+    <xs:sequence>
+      <xs:element name="codeClass" type="xs:string" minOccurs="0"/>
+      <xs:element name="niveau" type="xs:string" minOccurs="0"/>
+      <xs:element name="nomClasse" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getAllMatieres">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getAllMatieresResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:matieres" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getAllStudents">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getAllStudentsResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:etudiants" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getAllEvaluations">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getAllEvaluationsResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:evaluations" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="checkUser">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+      <xs:element name="arg1" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="checkUserResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:users" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="users">
+    <xs:sequence>
+      <xs:element name="email" type="xs:string" minOccurs="0"/>
+      <xs:element name="id" type="xs:string" minOccurs="0"/>
+      <xs:element name="nom" type="xs:string" minOccurs="0"/>
+      <xs:element name="password" type="xs:string" minOccurs="0"/>
+      <xs:element name="prenom" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getEtudiantByID">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getEtudiantByIDResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:etudiants" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getAllUsers">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getAllUsersResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:users" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+
